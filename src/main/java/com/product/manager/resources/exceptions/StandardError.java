@@ -1,6 +1,7 @@
 package com.product.manager.resources.exceptions;
 
 public class StandardError {
+	private static final long serialVersionUID = 1L;
 	
 	private Integer status;
 	private String msg;
