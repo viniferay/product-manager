@@ -15,7 +15,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -28,8 +27,8 @@ public class Produto implements Serializable{
 	private String nome;
 	private double preco;
 	
-	// JsonBackReference Elimina redundancia no relacionamento entre produto e categoria.
-	@JsonBackReference
+	
+	@JsonIgnore
 	// ManyToMany relaciona de objetos de muitos para muitos. 
 	@ManyToMany
 	
