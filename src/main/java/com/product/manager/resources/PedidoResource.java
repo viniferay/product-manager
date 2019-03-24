@@ -13,8 +13,8 @@ public class PedidoResource {
 
 	private PedidoService pedidoService;
 	
-	public ResponseEntity<?> buscar(Integer id){
-		Pedido obj = pedidoService.buscar(id);
+	public ResponseEntity<Pedido> buscar(Integer id){
+		Pedido obj = pedidoService.find(id);
 		
 		return ResponseEntity.ok().body(obj);
 	}

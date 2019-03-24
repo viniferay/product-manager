@@ -15,7 +15,7 @@ public class CategoriasService {
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 	
-	public Categoria buscar(Integer id) {
+	public Categoria find(Integer id) {
 		Optional<Categoria> obj = categoriaRepository.findById(id);
 		
 		//Trata execao em caso de categoria nao cadastrada.
@@ -25,6 +25,11 @@ public class CategoriasService {
 	
 	public Categoria insert(Categoria obj) {
 		obj.setId(null);
+		return categoriaRepository.save(obj);
+	}
+	
+	public Categoria update(Categoria obj) {
+		find(obj.getId());
 		return categoriaRepository.save(obj);
 	}
 }
