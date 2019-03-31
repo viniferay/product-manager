@@ -1,5 +1,6 @@
 package com.product.manager.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,9 @@ public class CategoriasService {
 		catch(DataIntegrityViolationException e){
 			throw new DataIntegrityException("A categoria possuí produtos. Não é possivel excluir a categoria");
 		}
+	}
+	
+	public List<Categoria> findAll(){
+		return categoriaRepository.findAll();
 	}
 }
